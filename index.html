@@ -12,29 +12,32 @@
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    /* overflow-x: hidden; */
 }
         * {
             box-sizing: border-box;
+            margin:0;
+        padding:0;
+        scroll-behavior:smooth;
         }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
+            background-color: #29292A;
         }
 
         .logo{
-            margin:3rem auto 0rem;
             width:100%;
             height:15rem;
             background-image:url("resources/LOGO.png");
             background-repeat: no-repeat;
-            background-size: 85%;
+            background-size: 50%;
             animation: logo-anim linear forwards;
             animation-timeline: scroll();
             animation-range-start: cover;
             animation-range-end: cover 100px;
-            margin-left: 5rem;
+            background-position: center;
+            margin: 0 auto;
         }
         @keyframes logo-anim {
             to{
@@ -120,6 +123,7 @@
             z-index: -1;
             
         }
+
 
     
 
@@ -267,7 +271,7 @@
         }
 
         .container{
-            width:80rem;
+            width:130rem;
             margin:auto;
             align-items: center;
             padding-left: 13%;
@@ -283,7 +287,33 @@
                 width: 100%;
                 height: auto;
             }
+
         }
+
+        @media (max-width: 1500px){
+	    .side-panel{
+		    display:none;
+	    }
+	    .end-img{
+	    	width:100%;
+	    }
+
+        .container{
+            padding-left: 0%;
+        }
+	    .logo{
+		animation:none !important;
+	    }
+    }
+
+        
+
+        @media (min-width: 100%){
+            .container{
+            width:50%;
+        }
+        }
+
 
         img{
             -ms-interpolation-mode: nearest-neighbor;
@@ -294,7 +324,7 @@
         h1 {
             color: white;
             font-size: 2rem;
-            width: 80rem;
+            width:60rem;
             line-height: 2rem;
             margin: auto;
             padding: 2rem 0 1rem 0rem;
@@ -304,7 +334,7 @@
         h2 {
             color: white;
             font-size: 1.6rem;
-            width: 80rem;
+            width:60rem;
             line-height: 2rem;
             margin: auto;
             padding: 2rem 0 1rem 0rem;
@@ -328,6 +358,7 @@
             margin: auto;
             padding: 1rem 0 1rem;
             font-family: Arial, Helvetica, sans-serif;
+            width:60rem;
         }
 
         a {
@@ -346,30 +377,36 @@
             width:60rem;
             margin-left: 1.5rem;
             line-height: 3rem;
+            margin: auto;
+
         }
         .ul-2 p{
             padding:0.5rem 0 0.5rem 2.5rem;
+            margin: auto;
         }
         .ul-3 p{
             padding:0.5rem 0 0.5rem 5rem;
+            margin: auto;
         }
 
         vernstuff{
             color: white;
             font-size:2.5rem;
-            width:80rem;
-            line-height: 1.5rem;
+            width:60rem;
+            line-height: 3rem;
             margin:auto;
             padding:0rem 0 1rem 2rem;
             letter-spacing: 0.05rem;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
+            display: block;
         }
     
         vernstuff2{
+            display: block;
             color: white;
             font-size:2rem;
-            width:80rem;
+            width:60rem;
             line-height: 1rem;
             margin:auto;
             padding: 0 0 1rem 2rem;
@@ -452,13 +489,13 @@
 
                 <!-- <p><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></p> -->
 
-                <div class="logo" id="introduction"></div>
+                <div class="logo" id="introduction" style="align-items: center;"></div>
 
                 <vernstuff><span class="ru" style="display: none;"><b>ГАЙД ПО ПЕРЕИМЕНОВАНИЯМ</b></span><span class="en" style="display: block;"><b>RENAMING GUIDE</b></span></vernstuff>
                 <vernstuff2><span class="ru" style="display: none;"><b>ПОСЛЕДНЯЯ ВЕРСИЯ: БЕТА-0.1</b></span><span class="en" style="display: block;"><b>LATEST VERSION: BETA-0.1</b></span></vernstuff2>
                 <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
-                <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
                 <p><span class="ru" style="display: none; text-align: center;">Сотни новых предметов и возможностей для декорации</span><span class="en" style="display: block; text-align: center;">Hundreds of new items and possibilities for deco</span></p>
+                <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
                 <p><span class="ru" style="display: none;"><b>Rev's Ultimate RP 2</b> - ресурс-пак, изначально сделанный для сервера Realm+ и предназначенный для расширения выбора в декоре и косметических предметах. Среди новых предметов есть пропы, шапки, оружие, еда и т.д.</span><span class="en" style="display: block;"><b>Rev's Ultimate RP 2</b> is a resourcepack originally made for Realm+ (an SMP) and designed to expand the choice in deco and cosmetic items. New items include props, hats, weapons, food, etc.</span></p>
 
                 <h1 id="installation_and_usage"><span class="ru" style="display: none;">Установка и использование</span><span class="en" style="display: block;">Installation and usage</span></h1>
@@ -509,17 +546,6 @@
                     break;
             }
         }
-        let offset = 0;
-        let offcoord = 0;
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById("header");
-            let direction = offset <= window.pageYOffset;
-
-            offcoord = Math.min(Math.max(offcoord + window.pageYOffset - offset, 0), 48);
-            header.style.setProperty("--offset", -offcoord + "px");
-
-            offset = window.pageYOffset;
-        });
     </script>
 
 </body>
