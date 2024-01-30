@@ -323,7 +323,7 @@
 
         h1 {
             color: white;
-            font-size: 2rem;
+            font-size: 2.2rem;
             width:60rem;
             line-height: 2rem;
             margin: auto;
@@ -359,6 +359,17 @@
             padding: 1rem 0 1rem;
             font-family: Arial, Helvetica, sans-serif;
             width:60rem;
+        }
+
+        pdownl {
+            color: rgb(187, 187, 187);
+            font-size: 1.2rem;
+            line-height: 2rem;
+            margin: auto;
+            padding: 1rem 0 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            width:60rem;
+            text-align: center;
         }
 
         a {
@@ -414,6 +425,65 @@
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
         }
+
+
+
+    table{
+        width:60rem;
+        margin:auto;
+        color:white;
+        border-spacing:0;
+        line-height: 2rem;
+        font-size:1.4rem;
+    }
+
+    .items-table{
+		padding-bottom: 3rem;
+	}
+    .items-table tr:first-of-type td{
+        background-color:#2f2f30;
+        border: 0.2rem double #d1222b;
+
+    }
+	.items-table tr:first-of-type:hover td{
+        background-color:#323233;
+    }
+    .items-table tr:hover > td{
+        background-color:#232324;
+    }
+	.items-table tr{
+		position: relative;
+		z-index: 2;
+	}
+    .items-table td{
+        background-color:#29292A;
+        border:0.1rem solid #383838;
+        padding:0 0.25rem;
+        vertical-align: top;
+        transition: background-color .2s;
+        
+    }
+    .items-table td:nth-of-type(1){
+        width:6rem;
+    }
+    .items-table td:nth-of-type(2){
+        width:16rem;
+    }
+    .items-table td:nth-of-type(3){
+        width:10.7rem;
+    }
+    .items-table td:nth-of-type(4){
+        width:9.5rem;
+    }
+    .items-table img{
+        width: 3rem;
+        height: 3rem;
+        margin: 0.75rem 0.75rem 0 0.75rem;
+    }
+    .items-table span{
+        z-index: 1;
+        position: relative;
+    }
     
     </style>
 
@@ -447,11 +517,20 @@
                     </a><a href="#introduction" class="en" style="display: block;">
                         <p>Introduction</p>
                     </a>
+
                     <a href="#installation_and_usage" class="ru" style="display: none;">
                         <p>Установка и использование</p>
                     </a><a href="#installation_and_usage" class="en" style="display: block;">
                         <p>Installation and usage</p>
                     </a>
+
+                    <a href="#renames" class="ru" style="display: none;">
+                        <p>Переименования</p>
+                    </a><a href="#renames" class="en" style="display: block;">
+                        <p>Renames</p>
+                    </a>
+
+
                     <a href="#test1" class="ul-2 ru" style="display: none;">
                         <p>test1</p>
                     </a><a href="#test1" class="ul-2 en" style="display: block;">
@@ -498,10 +577,13 @@
                 <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
                 <p><span class="ru" style="display: none;"><b>Rev's Ultimate RP 2</b> - ресурс-пак, изначально сделанный для сервера Realm+ и предназначенный для расширения выбора в декоре и косметических предметах. Среди новых предметов есть пропы, шапки, оружие, еда и т.д.</span><span class="en" style="display: block;"><b>Rev's Ultimate RP 2</b> is a resourcepack originally made for Realm+ (an SMP) and designed to expand the choice in deco and cosmetic items. New items include props, hats, weapons, food, etc.</span></p>
 
+
+
+
                 <h1 id="installation_and_usage"><span class="ru" style="display: none;">Установка и использование</span><span class="en" style="display: block;">Installation and usage</span></h1>
 
-                <p><span class="ru" style="display: none;">Для использования ресурс-пака нужен <a href="https://optifine.net"><b>OptiFine</b></a> или <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> (рекомендуется), иначе он работать не будет. Скачав ресурс-пак, поместите его в папку resourcepacks в корневой папке Minecraft, а затем включите его в настройках игры. <br><br>Переименуйте нужный предмет в наковальне для получения новой текстуры/модели. В зависимости от пункта в таблице можно добавлять свой текст с двух сторон.
-                </span><span class="en" style="display: block;">You need to install <a href="https://optifine.net"><b>OptiFine</b></a> or <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> for the resourcepack to work. After downloading it, put it into the resourcepacks folder in your game root directory and enable it in the game settings.<br><br>Rename an item on an anvil to get a new texture/model. Depending on what the table says you can add text on both sides.</span></p>
+                <p><span class="ru" style="display: none;">Для использования ресурс-пака нужен <a href="https://optifine.net"><b>OptiFine</b></a> или <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> (рекомендуется для игнорирования регистра символов у русских названий), иначе он работать не будет. Скачав ресурс-пак, поместите его в папку resourcepacks в корневой папке Minecraft, а затем включите его в настройках игры. <br><br>Переименуйте нужный предмет в наковальне для получения новой текстуры/модели. Символ <b>*</b> после или до названия предмета говорит о возможности добавить туда дополнительный текст при желании.
+                </span><span class="en" style="display: block;">You need to install <a href="https://optifine.net"><b>OptiFine</b></a> or <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> for the resourcepack to work. After downloading it, put it into the resourcepacks folder in your game root directory and enable it in the game settings.<br><br>Rename an item on an anvil to get a new texture/model. The <b>*</b> symbol after or before the item name suggests that you can add text there if you wish.</span></p>
 
                 <h2 class="bold"><span class="ru" style="display: none;">Разрешается:</span><span class="en" style="display: block;">You are allowed to:</span></h2>
                 <div class="ul">
@@ -511,6 +593,43 @@
                 <div class="ul">
                     <p><span class="ru" style="display: none;">• Выдавать себя за автора<br>• Красть текстуры/модели с отсутствием изменений/незначительными изменениями</span><span class="en" style="display: block;">• Take the authorship<br>• Steal textures/models without any changes/with overly minor changes</span></p>
                 </div>
+
+
+
+                <pdownl><span class="ru" style="display: none;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>[ СКАЧАТЬ ЭТУ СТРАНИЦУ (index.html) ]</b></a><br>Code > Download ZIP (для работы нужно оставить папку resources в том же месте, где и index.html)
+                </span><span class="en" style="display: block;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>[ DOWNLOAD THIS PAGE (index.html) ]</b></a><br>Code > Download ZIP (leave the resources folder in the same place as the index.html file for it to work properly)</span></pdownl>
+
+
+
+
+                <h1 id="renames"><span class="ru" style="display: none;">Переименования</span><span class="en" style="display: block;">Renames</span></h1>
+
+                <table class="items-table">
+                    <tr>
+                        <td><span class="ru" style="display: none;">Иконка</span><span class="en" style="display: block;">Icon</span></td>
+                        <td><span class="ru" style="display: none;">Переименование</span><span class="en" style="display: block;">Display name</span></td>
+                        <td><span class="ru" style="display: none;">Предмет</span><span class="en" style="display: block;">Base item</span></td>
+                        <td><span class="ru" style="display: none;">Особенности</span><span class="en" style="display: block;">Unique feature</span></td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                </table>
+
             </div>
             
         </article>
