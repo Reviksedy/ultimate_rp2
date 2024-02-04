@@ -319,6 +319,9 @@
             -ms-interpolation-mode: nearest-neighbor;
             image-rendering:pixelated;
             image-rendering:-moz-pixelated;
+            width: 128px;
+            height: 128px;
+            
         }
 
         h1 {
@@ -331,16 +334,43 @@
             letter-spacing: 0.05rem;
             font-family: Arial, Helvetica, sans-serif;
         }
-        h2 {
-            color: white;
-            font-size: 1.6rem;
-            width:60rem;
-            line-height: 2rem;
-            margin: auto;
-            padding: 2rem 0 1rem 0rem;
-            letter-spacing: 0.05rem;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+
+    h2{
+        color: white;
+        font-size:1.4rem;
+        width:60rem;
+        line-height: 2rem;
+        margin:auto;
+        padding:1rem 0 1rem;
+        letter-spacing: 0.025rem;
+    }
+    h3{
+        color: white;
+        font-size:1.4rem;
+        width:60rem;
+        line-height: 2rem;
+        margin:auto;
+        font-weight: normal;
+    }
+
+    h4{
+        color: white;
+        font-size:1.7rem;
+        width:60rem;
+        line-height: 2rem;
+        margin:auto;
+        padding:1rem 0 1rem;
+        letter-spacing: 0.025rem;
+    }
+    h5{
+        color: white;
+        font-size:1.5rem;
+        width:60rem;
+        line-height: 2rem;
+        margin:auto;
+        padding-bottom: 4px;
+        font-weight: normal;
+    }
 
         h6 {
             color: white;
@@ -400,6 +430,13 @@
             margin: auto;
         }
 
+        .ul-22 p{
+            margin: auto;
+        }
+        .ul-33 p{
+            margin: auto;
+        }
+
         vernstuff{
             color: white;
             font-size:2.5rem;
@@ -449,7 +486,7 @@
         background-color:#323233;
     }
     .items-table tr:hover > td{
-        background-color:#232324;
+        background-color:#262627;
     }
 	.items-table tr{
 		position: relative;
@@ -465,6 +502,7 @@
     }
     .items-table td:nth-of-type(1){
         width:6rem;
+        align-items: center;
     }
     .items-table td:nth-of-type(2){
         width:16rem;
@@ -476,14 +514,51 @@
         width:9.5rem;
     }
     .items-table img{
-        width: 3rem;
-        height: 3rem;
-        margin: 0.75rem 0.75rem 0 0.75rem;
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3px;
+        margin-top: 3px;
+        filter: drop-shadow(3px 3px #00000056);
     }
     .items-table span{
         z-index: 1;
         position: relative;
     }
+
+
+    .collapsible {
+        background-color:#323233;
+        border: 0.15rem solid #3c3c3d;
+        border-radius: 3px;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 4px;
+        width: 100%;
+        text-align: center;
+        outline: none;
+        font-size: 17px;
+        margin-bottom: 2px;
+}
+
+
+
+
+.active, .collapsible:hover {
+  background-color: #3c3c3d;
+}
+
+
+.content {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #1f1f20;
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+}
     
     </style>
 
@@ -531,15 +606,15 @@
                     </a>
 
 
-                    <a href="#test1" class="ul-2 ru" style="display: none;">
-                        <p>test1</p>
-                    </a><a href="#test1" class="ul-2 en" style="display: block;">
-                        <p>test1</p>
+                    <a href="#deco" class="ul-2 ru" style="display: none;">
+                        <p>Декор</p>
+                    </a><a href="#deco" class="ul-2 en" style="display: block;">
+                        <p>Deco</p>
                     </a>
-                    <a href="#test2" class="ul-3 ru" style="display: none;">
-                        <p>test2</p>
-                    </a><a href="#test2" class="ul-3 en" style="display: block;">
-                        <p>test2</p>
+                    <a href="#deco-furniture" class="ul-3 ru" style="display: none;">
+                        <p>Мебель</p>
+                    </a><a href="#deco-furniture" class="ul-3 en" style="display: block;">
+                        <p>Furniture</p>
                     </a>
                 </div>
 
@@ -604,6 +679,10 @@
 
                 <h1 id="renames"><span class="ru" style="display: none;">Переименования</span><span class="en" style="display: block;">Renames</span></h1>
 
+                <h4 id="deco"><span class="ru" style="display: none;">Декор</span><span class="en" style="display: block;">Deco</span></h4>
+
+                <h5 id="deco-furniture"><span class="ru" style="display: none;">Мебель</span><span class="en" style="display: block;">Furniture</span></h5>
+
                 <table class="items-table">
                     <tr>
                         <td><span class="ru" style="display: none;">Иконка</span><span class="en" style="display: block;">Icon</span></td>
@@ -613,20 +692,50 @@
                     </tr>
 
 
-
                     <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
+                        <td><img src="resources/items/oak_chair.png">
+                            <button type="button" class="collapsible"><span class="ru" style="display: none;">Варианты</span><span class="en">Types</span></button>
+                            <div class="content">
+                                <img src="resources/items/spruce_chair.png">
+                                <img src="resources/items/birch_chair.png">
+                                <img src="resources/items/jungle_chair.png">
+                                <img src="resources/items/acacia_chair.png">
+                                <img src="resources/items/dark_oak_chair.png">
+                                <img src="resources/items/mangrove_chair.png">
+                                <img src="resources/items/cherry_chair.png">
+                                <img src="resources/items/bamboo_chair.png">
+                                <img src="resources/items/crimson_chair.png">
+                                <img src="resources/items/warped_chair.png">
+                            </div>
+                        </td>
+                        <td><span class="ru" style="display: none;">Стул</span><span class="en">Chair</span></td>
+                        <td><span class="ru" style="display: none;">Любые доски</span><span class="en">Any planks</span></td>
+                        <td></td>
                     </tr>
 
+
                     <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
+                        <td><img src="resources/items/oak_table.png">
+                            <button type="button" class="collapsible"><span class="ru" style="display: none;">Варианты</span><span class="en">Types</span></button>
+                            <div class="content">
+                                <img src="resources/items/spruce_table.png">
+                                <img src="resources/items/birch_table.png">
+                                <img src="resources/items/jungle_table.png">
+                                <img src="resources/items/acacia_table.png">
+                                <img src="resources/items/dark_oak_table.png">
+                                <img src="resources/items/mangrove_table.png">
+                                <img src="resources/items/cherry_table.png">
+                                <img src="resources/items/bamboo_table.png">
+                                <img src="resources/items/crimson_table.png">
+                                <img src="resources/items/warped_table.png">
+                            </div>
+                        </td>
+                        <td><span class="ru" style="display: none;">Стол</span><span class="en">Table</span></td>
+                        <td><span class="ru" style="display: none;">Любые доски</span><span class="en">Any planks</span></td>
+                        <td></td>
                     </tr>
+
+                    
 
                 </table>
 
@@ -665,6 +774,24 @@
                     break;
             }
         }
+
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                    content.style.display = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.display = "block";
+            } 
+        });
+       }      
     </script>
 
 </body>
