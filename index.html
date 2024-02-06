@@ -17,8 +17,8 @@
         * {
             box-sizing: border-box;
             margin:0;
-        padding:0;
-        scroll-behavior:smooth;
+            padding:0;
+            scroll-behavior:smooth;
         }
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -27,23 +27,24 @@
         }
 
         .logo{
-            width:100%;
+            width:90%;
             height:15rem;
             background-image:url("resources/LOGO.png");
             background-repeat: no-repeat;
-            background-size: 50%;
+            background-size: 100%;
             animation: logo-anim linear forwards;
             animation-timeline: scroll();
             animation-range-start: cover;
             animation-range-end: cover 100px;
             background-position: center;
-            margin: 0 auto;
+            margin: auto;
+            overflow: auto;
             filter: drop-shadow(6px 12px #0000004d);
         }
         @keyframes logo-anim {
             to{
                 opacity: 0;
-                transform: scale(1.1);
+                transform: scale(1.02);
             }
         }
 
@@ -117,7 +118,6 @@
 
 
         article {
-            padding: 100px;
             width: 100%;
             background-color: #29292A;
             height: 100%;
@@ -151,6 +151,7 @@
             transition: background-color .5s;
             z-index: 0;
             height: 100%;
+            overflow-y: scroll;
         }
 
         .side-panel h1 {
@@ -235,9 +236,12 @@
         }
 
         .links-container {
-            height: 40svh;
             width: 100%;
-            overflow-y: scroll;
+            align-items: center;
+            align-self: flex-end;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 20px;
         }
 
         .titles-container::-webkit-scrollbar {
@@ -272,10 +276,9 @@
         }
 
         .container{
-            width:130rem;
+            width: 60rem;
             margin:auto;
             align-items: center;
-            padding-left: 13%;
         }
 
 
@@ -295,23 +298,31 @@
 	    .side-panel{
 		    display:none;
 	    }
-	    .end-img{
-	    	width:100%;
-	    }
 
-        .container{
-            padding-left: 0%;
+        #main1 {
+           width: 100%!important;
+           float: none!important;
         }
+
+        #nav1 {
+           width: 0%!important;
+           float: none!important;
+        }
+
+
+
 	    .logo{
 		animation:none !important;
 	    }
+
+        
     }
 
         
 
         @media (min-width: 100%){
             .container{
-            width:50%;
+            width: 60rem
         }
         }
 
@@ -328,7 +339,7 @@
         h1 {
             color: white;
             font-size: 2.2rem;
-            width:60rem;
+            width:100%;
             line-height: 2rem;
             margin: auto;
             padding: 2rem 0 1rem 0rem;
@@ -339,7 +350,7 @@
     h2{
         color: white;
         font-size:1.4rem;
-        width:60rem;
+        width:100%;
         line-height: 2rem;
         margin:auto;
         padding:1rem 0 1rem;
@@ -348,7 +359,7 @@
     h3{
         color: white;
         font-size:1.4rem;
-        width:60rem;
+        width:100%;
         line-height: 2rem;
         margin:auto;
         font-weight: normal;
@@ -357,7 +368,7 @@
     h4{
         color: white;
         font-size:1.7rem;
-        width:60rem;
+        width:100%;
         line-height: 2rem;
         margin:auto;
         padding:1rem 0 1rem;
@@ -366,7 +377,7 @@
     h5{
         color: white;
         font-size:1.5rem;
-        width:60rem;
+        width:100%;
         line-height: 2rem;
         margin:auto;
         padding-bottom: 4px;
@@ -389,7 +400,7 @@
             margin: auto;
             padding: 1rem 0 1rem;
             font-family: Arial, Helvetica, sans-serif;
-            width:60rem;
+            width:100%;
         }
 
         pdownl {
@@ -399,7 +410,7 @@
             margin: auto;
             padding: 1rem 0 1rem;
             font-family: Arial, Helvetica, sans-serif;
-            width:60rem;
+            width:100%;
             text-align: center;
         }
 
@@ -416,7 +427,7 @@
         }
         .ul p{
             padding:0.5rem 0 0.5rem 3rem;
-            width:60rem;
+            width:100%;
             margin-left: 1.5rem;
             line-height: 3rem;
             margin: auto;
@@ -441,7 +452,7 @@
         vernstuff{
             color: white;
             font-size:2.5rem;
-            width:60rem;
+            width:100%;
             line-height: 3rem;
             margin:auto;
             padding:0rem 0 1rem 2rem;
@@ -455,7 +466,7 @@
             display: block;
             color: white;
             font-size:2rem;
-            width:60rem;
+            width:100%;
             line-height: 1rem;
             margin:auto;
             padding: 0 0 1rem 2rem;
@@ -467,7 +478,7 @@
 
 
     table{
-        width:60rem;
+        width:100%;
         margin:auto;
         color:white;
         border-spacing:0;
@@ -562,89 +573,95 @@
 }
     
     </style>
-
+<header>
+    <h6 class="ru" style="display: none;">REV'S ULTIMATE RP 2</h6>
+    <h6 class="en" style="display: block;">REV'S ULTIMATE RP 2</h6>
+    <div id="lang-change">
+        <div class="ru lang-change lang-change-ru" style="display: none;"></div>
+        <div class="en lang-change lang-change-en" style="display: block;"></div>
+    </div>
+</header>
 </head>
 
 
 
 <body>
 
-    <header>
-        <h6 class="ru" style="display: none;">REV'S ULTIMATE RP 2</h6>
-        <h6 class="en" style="display: block;">REV'S ULTIMATE RP 2</h6>
-        <div id="lang-change">
-            <div class="ru lang-change lang-change-ru" style="display: none;"></div>
-            <div class="en lang-change lang-change-en" style="display: block;"></div>
-        </div>
-    </header>
+    
 
-    <section>
+    <section style="width: 18%; float: left;" id="nav1">
         <nav>
-            <ul>
-            </ul>
-            <div class="titles side-panel" id="titles">
+        <ul>
+        </ul>
+        <div class="titles side-panel" id="titles">
 
-                <h1 class="ru" style="display: none;">Содержание</h1>
-                <h1 class="en" style="display: block;">Contents</h1>
+            <h1 class="ru" style="display: none;">Содержание</h1>
+            <h1 class="en" style="display: block;">Contents</h1>
 
-                <div class="titles-container">
-                    <a href="#introduction" class="ru" style="display: none;">
-                        <p>Начало</p>
-                    </a><a href="#introduction" class="en" style="display: block;">
-                        <p>Introduction</p>
-                    </a>
+            <div class="titles-container">
+                <a href="#introduction" class="ru" style="display: none;">
+                    <p>Начало</p>
+                </a><a href="#introduction" class="en" style="display: block;">
+                    <p>Introduction</p>
+                </a>
 
-                    <a href="#installation_and_usage" class="ru" style="display: none;">
-                        <p>Установка и использование</p>
-                    </a><a href="#installation_and_usage" class="en" style="display: block;">
-                        <p>Installation and usage</p>
-                    </a>
+                <a href="#installation_and_usage" class="ru" style="display: none;">
+                    <p>Установка и использование</p>
+                </a><a href="#installation_and_usage" class="en" style="display: block;">
+                    <p>Installation and usage</p>
+                </a>
 
-                    <a href="#renames" class="ru" style="display: none;">
-                        <p>Переименования</p>
-                    </a><a href="#renames" class="en" style="display: block;">
-                        <p>Renames</p>
-                    </a>
+                <a href="#renames" class="ru" style="display: none;">
+                    <p>Переименования</p>
+                </a><a href="#renames" class="en" style="display: block;">
+                    <p>Renames</p>
+                </a>
 
 
-                    <a href="#deco" class="ul-2 ru" style="display: none;">
-                        <p>Декор</p>
-                    </a><a href="#deco" class="ul-2 en" style="display: block;">
-                        <p>Deco</p>
-                    </a>
-                    <a href="#deco-furniture" class="ul-3 ru" style="display: none;">
-                        <p>Мебель</p>
-                    </a><a href="#deco-furniture" class="ul-3 en" style="display: block;">
-                        <p>Furniture</p>
-                    </a>
-                </div>
-
-                <div class="links-container">
-                    <h1 class="ru" style="display: none;">Ссылки</h1>
-                    <h1 class="en" style="display: block;">Links</h1>
-                    <div class="download-btn"></div>
-    
-                    <a href="https://www.planetminecraft.com/" class="download-tab pmc_link"><img src="resources/pmc.png">
-                        <p>PLANET MC</p>
-                    </a>
-    
-    
-                    <a href="https://minecraft-inside.ru/" class="download-tab mci_link"><img src="resources/mci.png">
-                        <p>MC INSIDE</p>
-                    </a>
-                </div>
-                
-
+                <a href="#deco" class="ul-2 ru" style="display: none;">
+                    <p>Декор</p>
+                </a><a href="#deco" class="ul-2 en" style="display: block;">
+                    <p>Deco</p>
+                </a>
+                <a href="#deco-furniture" class="ul-3 ru" style="display: none;">
+                    <p>Мебель</p>
+                </a><a href="#deco-furniture" class="ul-3 en" style="display: block;">
+                    <p>Furniture</p>
+                </a>
             </div>
 
-        </nav>
+            <div class="links-container">
+                <h1 class="ru" style="display: none;">Ссылки</h1>
+                <h1 class="en" style="display: block;">Links</h1>
+                <div class="download-btn"></div>
+
+                <a href="https://www.planetminecraft.com/" class="download-tab pmc_link"><img src="resources/pmc.png">
+                    <p>PLANET MC</p>
+                </a>
+
+
+                <a href="https://minecraft-inside.ru/" class="download-tab mci_link"><img src="resources/mci.png">
+                    <p>MC INSIDE</p>
+                </a>
+            </div>
+            
+
+        </div>
+
+    </nav>
+</section>
+
+
+    <section style="width: 82%; float: right;" id="main1">
+        
 
         <article>
             <div class="container">
 
                 <!-- <p><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></p> -->
 
-                <div class="logo" id="introduction" style="align-items: center;"></div>
+                <p><br><br><br></p>
+                <div class="logo" id="introduction"></div>
 
                 <vernstuff><span class="ru" style="display: none;"><b>ГАЙД ПО ПЕРЕИМЕНОВАНИЯМ</b></span><span class="en" style="display: block;"><b>RENAMING GUIDE</b></span></vernstuff>
                 <vernstuff2><span class="ru" style="display: none;"><b>ПОСЛЕДНЯЯ ВЕРСИЯ: БЕТА-0.1 [ПРИВАТНАЯ WIP]</b></span><span class="en" style="display: block;"><b>LATEST VERSION: BETA-0.1 [PRIVATE WIP]</b></span></vernstuff2>
