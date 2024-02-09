@@ -527,7 +527,12 @@
         margin-right: auto;
         margin-bottom: 3px;
         margin-top: 3px;
-        filter: drop-shadow(3px 3px #00000056);
+        filter: drop-shadow(3px 3px #00000042);
+        transition: transform .2s;
+    }
+
+    .items-table img:hover{
+        transform: scale(1.05);
     }
     .items-table span{
         z-index: 1;
@@ -617,11 +622,19 @@
                 </a><a href="#deco" class="ul-2 en" style="display: block;">
                     <p>Deco</p>
                 </a>
+
                 <a href="#deco-furniture" class="ul-3 ru" style="display: none;">
                     <p>Мебель</p>
                 </a><a href="#deco-furniture" class="ul-3 en" style="display: block;">
                     <p>Furniture</p>
                 </a>
+
+                <a href="#deco-nature-n-plants" class="ul-3 ru" style="display: none;">
+                    <p>Природа и растения</p>
+                </a><a href="#deco-nature-n-plants" class="ul-3 en" style="display: block;">
+                    <p>Nature and plants</p>
+                </a>
+
             </div>
 
             <div class="links-container">
@@ -749,22 +762,22 @@
 
 
                     <tr>
-                        <td><img src="resources/items/oak_small_table.png">
+                        <td><img src="resources/items/small_oak_table.png">
                             <button type="button" class="collapsible"><span class="ru" style="display: none;">Варианты</span><span class="en">Types</span></button>
                             <div class="content">
-                                <img src="resources/items/spruce_small_table.png">
-                                <img src="resources/items/birch_small_table.png">
-                                <img src="resources/items/jungle_small_table.png">
-                                <img src="resources/items/acacia_small_table.png">
-                                <img src="resources/items/dark_oak_small_table.png">
-                                <img src="resources/items/mangrove_small_table.png">
-                                <img src="resources/items/cherry_small_table.png">
-                                <img src="resources/items/bamboo_small_table.png">
-                                <img src="resources/items/crimson_small_table.png">
-                                <img src="resources/items/warped_small_table.png">
+                                <img src="resources/items/small_spruce_table.png">
+                                <img src="resources/items/small_birch_table.png">
+                                <img src="resources/items/small_jungle_table.png">
+                                <img src="resources/items/small_acacia_table.png">
+                                <img src="resources/items/small_dark_oak_table.png">
+                                <img src="resources/items/small_mangrove_table.png">
+                                <img src="resources/items/small_cherry_table.png">
+                                <img src="resources/items/small_bamboo_table.png">
+                                <img src="resources/items/small_crimson_table.png">
+                                <img src="resources/items/small_warped_table.png">
                             </div>
                         </td>
-                        <td><span class="ru" style="display: none;">Маленький Стол</span><span class="en">Small Table</span></td>
+                        <td><span class="ru" style="display: none;">Маленький стол</span><span class="en">Small Table</span></td>
                         <td><span class="ru" style="display: none;">Любые доски</span><span class="en">Any planks</span></td>
                         <td></td>
                     </tr>
@@ -793,27 +806,84 @@
 
 
                     <tr>
-                        <td><img src="resources/items/oak_big_table.png">
+                        <td><img src="resources/items/large_oak_table.png">
                             <button type="button" class="collapsible"><span class="ru" style="display: none;">Варианты</span><span class="en">Types</span></button>
                             <div class="content">
-                                <img src="resources/items/spruce_big_table.png">
-                                <img src="resources/items/birch_big_table.png">
-                                <img src="resources/items/jungle_big_table.png">
-                                <img src="resources/items/acacia_big_table.png">
-                                <img src="resources/items/dark_oak_big_table.png">
-                                <img src="resources/items/mangrove_big_table.png">
-                                <img src="resources/items/cherry_big_table.png">
-                                <img src="resources/items/bamboo_big_table.png">
-                                <img src="resources/items/crimson_big_table.png">
-                                <img src="resources/items/warped_big_table.png">
+                                <img src="resources/items/large_spruce_table.png">
+                                <img src="resources/items/large_birch_table.png">
+                                <img src="resources/items/large_jungle_table.png">
+                                <img src="resources/items/large_acacia_table.png">
+                                <img src="resources/items/large_dark_oak_table.png">
+                                <img src="resources/items/large_mangrove_table.png">
+                                <img src="resources/items/large_cherry_table.png">
+                                <img src="resources/items/large_bamboo_table.png">
+                                <img src="resources/items/large_crimson_table.png">
+                                <img src="resources/items/large_warped_table.png">
                             </div>
                         </td>
-                        <td><span class="ru" style="display: none;">Большой Стол</span><span class="en">Big Table</span></td>
+                        <td><span class="ru" style="display: none;">Большой стол</span><span class="en">Large Table</span></td>
                         <td><span class="ru" style="display: none;">Любые доски</span><span class="en">Any planks</span></td>
                         <td></td>
                     </tr>
 
                 
+
+                </table>
+
+
+
+
+                <h5 id="deco-nature-n-plants"><span class="ru" style="display: none;">Природа и растения</span><span class="en" style="display: block;">Nature and plants</span></h5>
+
+
+                <table class="items-table">
+
+                    <tr>
+                        <td><span class="ru" style="display: none;">Иконка</span><span class="en" style="display: block;">Icon</span></td>
+                        <td><span class="ru" style="display: none;">Переименование</span><span class="en" style="display: block;">Display name</span></td>
+                        <td><span class="ru" style="display: none;">Предмет</span><span class="en" style="display: block;">Base item</span></td>
+                        <td><span class="ru" style="display: none;">Особенности</span><span class="en" style="display: block;">Unique feature</span></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><img src="resources/items/pebble.png"></td>
+                        <td><span class="ru" style="display: none;">Галька</span><span class="en">Pebble</span></td>
+                        <td><span class="ru" style="display: none;">Булыжник</span><span class="en">Cobblestone</span></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><img src="resources/items/rocks.png"></td>
+                        <td><span class="ru" style="display: none;">Камни</span><span class="en">Rocks</span></td>
+                        <td><span class="ru" style="display: none;">Булыжник</span><span class="en">Cobblestone</span></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><img src="resources/items/potted_plant.png"></td>
+                        <td><span class="ru" style="display: none;">Растение в горшке</span><span class="en">Potted Plant</span></td>
+                        <td><span class="ru" style="display: none;">Палка</span><span class="en">Stick</span></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><img src="resources/items/potted_shrub.png"></td>
+                        <td><span class="ru" style="display: none;">Кустарник в горшке</span><span class="en">Potted Shrub</span></td>
+                        <td><span class="ru" style="display: none;">Палка</span><span class="en">Stick</span></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><img src="resources/items/potted_tree.png"></td>
+                        <td><span class="ru" style="display: none;">Дерево в горшке</span><span class="en">Potted Tree</span></td>
+                        <td><span class="ru" style="display: none;">Палка</span><span class="en">Stick</span></td>
+                        <td></td>
+                    </tr>
 
                 </table>
 
