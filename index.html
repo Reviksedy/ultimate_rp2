@@ -486,6 +486,8 @@
     .items-table tr:first-of-type td{
         background-color:#2f2f30;
         border: 0.2rem double #d1222b;
+        text-align: center;
+        padding:0 0.25rem;
 
     }
 	.items-table tr:first-of-type:hover td{
@@ -512,12 +514,15 @@
     }
     .items-table td:nth-of-type(2){
         width:16rem;
+        padding: 5px;
     }
     .items-table td:nth-of-type(3){
         width:10.7rem;
+        padding: 5px;
     }
     .items-table td:nth-of-type(4){
         width:9.5rem;
+        padding: 5px;
     }
     .items-table img{
         width: 4rem;
@@ -529,6 +534,8 @@
         margin-top: 3px;
         filter: drop-shadow(3px 3px #00000042);
         transition: transform .2s;
+        padding-bottom: 3px;
+        padding-top: 3px;
     }
 
     .items-table img:hover{
@@ -551,7 +558,7 @@
         text-align: center;
         outline: none;
         font-size: 17px;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
 }
 
 
@@ -566,9 +573,13 @@
   padding: 0 18px;
   display: block;
   overflow: hidden;
-  background-color: #1f1f20;
+  background-image: linear-gradient(to bottom, #1f1f20, #1a1a1b);
   transition: max-height 0.2s ease-out;
   max-height: 0;
+  border: 0.15rem solid #3c3c3d;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  box-shadow: inset 0px 12px 3px -6px rgba(0,0,0,0.36);
 }
     
     </style>
