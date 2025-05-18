@@ -24,7 +24,7 @@
 }
 
 
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
 	.side {
 		display:none;
         width: 0%;
@@ -63,7 +63,7 @@
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    line-height: 0;
+    line-height: 1;
     color: white;
 }
 
