@@ -1,0 +1,291 @@
+/* necessary ig */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* columns */
+
+
+.side {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+
+.main {
+    float: right;
+    width: 80%;
+}
+
+
+@media (max-width: 1500px) {
+	.side {
+		display:none;
+        width: 0%;
+	}
+
+    .main {
+        width: 100%;
+    }
+}
+
+/* basic layout element */
+
+.boxgeneral {
+    background-color: #0F0F0F;
+    padding: 5px;
+}
+
+
+/* the round fancy thingy */
+
+.boxround {
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    padding: 15px;
+    height: 100%;
+
+    color: #e1e1e1;
+
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.boxround h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0;
+    color: white;
+}
+
+.boxround h2 {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: white;
+}
+
+.boxround h3 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.boxround h4 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #FF3333;
+    transition: all 0.3s ease;
+}
+
+
+a:hover {
+  color: #ff6b60;
+}
+
+
+/* buttons and selectors */
+
+.button {
+
+    font-family: 'Roboto', sans-serif;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    border: none;
+    border-radius: 15px;
+    background-color: #0F0F0F;
+    text-align: center;
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+
+
+    transition: all 0.3s ease;
+    transform: scale(1) perspective(1px);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1A1A1A;
+    color: white;
+    transform: scale(1.05) perspective(1px)
+}
+
+.button img {
+    width:3rem;
+    height:100%;
+    padding:0.25rem 0.5rem;
+    object-fit:cover;
+    image-rendering: pixelated;
+    margin-right: 5px;
+}
+
+/* list css */
+
+.contents {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    color: white;
+    background-color: #0F0F0F;
+    border-radius: 15px;
+    transform: scale(1) perspective(1px);
+}
+
+.contents:hover {
+    color: white;
+    background-color: #1A1A1A;
+    transform: scale(1.05) perspective(1px)
+}
+
+.c2 {
+    margin-left: 20px;
+}
+
+.c3 {
+    margin-left: 35px;
+}
+
+/* collapsible */
+
+
+.collapsible {
+    background-color: #1A1A1A;
+    border: 0.15rem solid #262626;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+
+
+
+.active, .collapsible:hover {
+  background-color: #262626;
+}
+
+
+.content {
+
+  display: block;
+  overflow: hidden;
+  background-image: #1a1a1a;
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+  border: 0.15rem solid #262626;
+  margin-bottom: 4px;
+  border-radius: 3px;
+}
+
+
+/* tables */
+
+
+table{
+    width:100%;
+    line-height: 2rem;
+    font-size:20px;
+}
+
+.items-table{
+	padding-bottom: 1rem;
+}
+
+.items-table tr:first-of-type td{
+    border: 2px double #d1222b;
+    text-align: center;
+    padding:0 2px;
+}
+	
+.items-table tr:first-of-type:hover td{
+    background-color:#262626;
+}
+
+	
+.items-table tr{
+	position: relative;
+	z-index: 2;
+}
+
+.items-table td{
+    border: 1px solid #262626;
+    padding:0 2px;
+    vertical-align: top;
+    transition: background-color .2s;    
+}
+
+.items-table td:nth-of-type(1){
+    width:4rem;
+    align-items: center;
+}
+
+.items-table td:nth-of-type(2){
+    width:16rem;
+    padding: 5px;
+}
+
+.items-table td:nth-of-type(3){
+    width:10rem;
+    padding: 5px;
+}
+
+.items-table td:nth-of-type(4){
+    width:10rem;
+    padding: 5px;
+}
+
+.items-table img{
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    filter: drop-shadow(3px 3px #00000042);
+    transition: transform .2s;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.items-table img:hover{
+    transform: scale(1.05);
+}
+
+.items-table span{
+    z-index: 1;
+    position: relative;
+}

@@ -1,729 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color: #0F0F0F;" lang="ru">
+<link rel="stylesheet" href="resources/style.css">
+
 
 <head>
     <title>REV'S ULTIMATE RP 2</title>
-    <link rel="shortcut icon" href="resources/ultimate2.png">
+    <link rel="icon" href="resources/siteicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
-        html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    /* overflow-x: hidden; */
-}
-        * {
-            box-sizing: border-box;
-            margin:0;
-            padding:0;
-            scroll-behavior:smooth;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background-color: #29292A;
-        }
-
-        .logo{
-            width:90%;
-            height:15rem;
-            background-image:url("resources/LOGO.png");
-            background-repeat: no-repeat;
-            background-size: 100%;
-            animation: logo-anim linear forwards;
-            animation-timeline: scroll();
-            animation-range-start: cover;
-            animation-range-end: cover 100px;
-            background-position: center;
-            margin: auto;
-            overflow: auto;
-            filter: drop-shadow(6px 12px #0000004d);
-        }
-        @keyframes logo-anim {
-            to{
-                opacity: 0;
-                transform: scale(1.02);
-            }
-        }
-
-
-        .lang-change {
-            background: #525252;
-            width: 3.5rem;
-            height: 2.25rem;
-            vertical-align: middle;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            -ms-interpolation-mode: nearest-neighbor;
-            image-rendering: -moz-pixelated;
-            image-rendering: pixelated;
-            transition: .1s;
-            cursor: pointer;
-        }
-
-        ::-webkit-scrollbar {
-        width: 15px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #333333;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: rgb(87, 87, 87);
-          border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            filter: contrast(125%) brightness(150%);
-        }
-
-        
-
-
-        .lang-change-ru {
-            background-image: url(resources/eng.png);
-        }
-
-        .lang-change-ru:hover {
-            filter: contrast(125%) brightness(150%);
-        }
-
-        .lang-change-en {
-            background-image: url(resources/rus.png);
-        }
-
-        .lang-change-en:hover {
-            filter: contrast(125%) brightness(150%);
-        }
-
-        header {
-            width: 100%;
-            height: 5rem;
-            background-color: #333333;
-            box-shadow: 0px 0.3rem 1rem 0.3rem #0f0f0f44;
-            z-index: 10;
-            position: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            text-align: left;
-            font-size: 35px;
-            color: white;
-            transform: translateY(var(--offset));
-        }
-
-
-        article {
-            width: 100%;
-            background-color: #29292A;
-            height: 100%;
-            z-index: -1;
-            
-        }
-
-
-    
-
-        nav {
-            float: left;
-            width:180px;
-            height: 100%;
-            background: #292929;
-        }
-
-        section::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .side-panel {
-            width: 22rem;
-            padding: 5.5rem 0 1rem;
-            background-color: #333333;
-            box-shadow: 0px 0.3rem 1rem 0.3rem #0f0f0f7f;
-            top: 0;
-            position: fixed;
-            transition: background-color .5s;
-            z-index: 0;
-            height: 100%;
-            overflow-y: scroll;
-        }
-
-        .side-panel h1 {
-            padding-top: 3rem;
-            padding-left: 3rem;
-            width: initial;
-        }
-
-        .side-panel:hover {
-            background-color: #383838;
-        }
-
-        .side-panel p {
-            width: initial;
-            margin: initial;
-            word-wrap: break-word;
-            padding: 0.5rem 1rem;
-            display: inline-block;
-        }
-
-        .download-tab{
-            width:70%;
-            margin:1rem 0 1rem 3rem;
-            display:flex;
-            align-items: center;
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-            transition: background-color .2s;
-            border-radius: 10px;
-        }
-
-        .download-tab img{
-            width:3rem;
-            height:2rem;
-            padding:0.25rem 0.5rem;
-            border-right: 0.125rem solid #080b0f46;
-            object-fit:cover;
-        }
-
-        .download-tab p{
-            font-family: "Arial";
-            font-weight: bold;
-            color:white;
-            font-size:1.2rem;
-        }
-
-        .pmc_link{
-            background-color: rgba(62, 151, 81, 0.75);
-        }
-        .pmc_link:hover{
-            background-color: rgba(79, 192, 65, 0.75);
-        }
-    
-        .mci_link{
-            background-color: rgba(29, 29, 29, 0.75);
-        }
-        .mci_link:hover{
-            background-color: rgb(37, 37, 37, 0.75);
-        }
-
-
-        .titles {
-            transform: translateX(-0.3rem);
-            background-position: 0 4.5rem;
-            background-image: url();
-            background-size: 100%;
-            background-repeat: no-repeat;
-            transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
-            float: left;
-        }
-
-        .titles:hover {
-            transform: translateX(0);
-        }
-
-        .titles-container {
-            height: 60svh;
-            width: 100%;
-            padding-left: 3.5rem;
-            overflow-y: scroll;
-            scrollbar-base-color: transparent;
-            scrollbar-color: #18243390;
-        }
-
-        .links-container {
-            width: 100%;
-            align-items: center;
-            align-self: flex-end;
-            position: absolute;
-            bottom: 0;
-            margin-bottom: 20px;
-        }
-
-        .titles-container::-webkit-scrollbar {
-            width: 0.6rem;
-            
-        }
-
-        .titles-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .titles-container::-webkit-scrollbar-thumb {
-            background-color: #3a3a3a90;
-            border-radius: 0.5rem;
-            cursor: pointer;
-        }
-
-        .titles-container p {
-            font-size: 1.2rem;
-            line-height: 1.2rem;
-            letter-spacing: 0.025rem;
-        }
-
-        .titles-container a {
-            transition: .1s;
-            margin-right: 0.25rem;
-        }
-
-        .titles-container a:hover {
-            background-color: #2e2e2e;
-            border-radius: 10px;
-        }
-
-        .container{
-            width: 70rem;
-            margin:auto;
-            align-items: center;
-        }
-
-
-
-        
-        @media (max-width: 600px) {
-
-            nav,
-            article {
-                width: 100%;
-                height: auto;
-            }
-
-        }
-
-        @media (max-width: 1500px){
-	    .side-panel{
-		    display:none;
-	    }
-
-        #main1 {
-           width: 100%!important;
-           float: none!important;
-        }
-
-        #nav1 {
-           width: 0%!important;
-           float: none!important;
-        }
-
-
-
-	    .logo{
-		animation:none !important;
-	    }
-
-        
-    }
-
-        
-
-
-        img{
-            -ms-interpolation-mode: nearest-neighbor;
-            image-rendering:pixelated;
-            image-rendering:-moz-pixelated;
-            width: 128px;
-            height: 128px;
-            
-        }
-
-        h1 {
-            color: white;
-            font-size: 2.2rem;
-            width:87%;
-            line-height: 2rem;
-            margin: auto;
-            padding: 2rem 0 1rem 0rem;
-            letter-spacing: 0.05rem;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-    h2{
-        color: white;
-        font-size:1.4rem;
-        width:87%;
-        line-height: 2rem;
-        margin:auto;
-        padding:1rem 0 1rem;
-        letter-spacing: 0.025rem;
-    }
-    h3{
-        color: white;
-        font-size:1.4rem;
-        width:87%;
-        line-height: 2rem;
-        margin:auto;
-        font-weight: normal;
-    }
-
-    h4{
-        color: white;
-        font-size:1.7rem;
-        width:87%;
-        line-height: 2rem;
-        margin:auto;
-        padding:1rem 0 1rem;
-        letter-spacing: 0.025rem;
-    }
-    h5{
-        color: white;
-        font-size:1.5rem;
-        width:87%;
-        line-height: 2rem;
-        margin:auto;
-        padding-bottom: 4px;
-        font-weight: normal;
-    }
-
-        h6 {
-            color: white;
-            font-size: 2.5rem;
-            line-height: 2rem;
-            padding: 1rem 0 1rem 1rem;
-            letter-spacing: 0.05rem;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        p {
-            color: rgb(226, 226, 226);
-            font-size: 1.4rem;
-            line-height: 2rem;
-            margin: auto;
-            padding: 1rem 0 1rem;
-            font-family: Arial, Helvetica, sans-serif;
-            width:87%;
-        }
-
-        pdownl {
-            color: rgb(187, 187, 187);
-            font-size: 1.2rem;
-            line-height: 2rem;
-            margin: auto;
-            padding: 1rem 0 1rem;
-            font-family: Arial, Helvetica, sans-serif;
-            width:87%;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-            color: #d1222b;
-            transition: color .1s;
-        }
-
-
-        .ul{
-            padding:0.5rem 0 0.5rem;
-            margin: auto;
-        }
-        .ul p{
-            padding:0.5rem 0 0.5rem 3rem;
-            width:87%;
-            margin-left: 1.5rem;
-            line-height: 3rem;
-            margin: auto;
-
-        }
-        .ul-2 p{
-            padding:0.5rem 0 0.5rem 2.5rem;
-            margin: auto;
-        }
-        .ul-3 p{
-            padding:0.5rem 0 0.5rem 5rem;
-            margin: auto;
-        }
-
-        .ul-22 p{
-            margin: auto;
-        }
-        .ul-33 p{
-            margin: auto;
-        }
-
-        vernstuff{
-            color: white;
-            font-size:2.5rem;
-            width:87%;
-            line-height: 3rem;
-            margin:auto;
-            padding:0rem 0 1rem 2rem;
-            letter-spacing: 0.05rem;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            display: block;
-        }
-    
-        vernstuff2{
-            display: block;
-            color: white;
-            font-size:2rem;
-            width:87%;
-            line-height: 1rem;
-            margin:auto;
-            padding: 0 0 1rem 2rem;
-            letter-spacing: 0.05rem;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-
-
-    table{
-        width:87%;
-        margin:auto;
-        color:white;
-        border-spacing:0;
-        line-height: 2rem;
-        font-size:1.4rem;
-    }
-
-    .items-table{
-		padding-bottom: 3rem;
-	}
-    .items-table tr:first-of-type td{
-        background-color:#2f2f30;
-        border: 0.2rem double #d1222b;
-        text-align: center;
-        padding:0 0.25rem;
-
-    }
-	.items-table tr:first-of-type:hover td{
-        background-color:#323233;
-    }
-    .items-table tr:hover > td{
-        background-color:#262627;
-    }
-	.items-table tr{
-		position: relative;
-		z-index: 2;
-	}
-    .items-table td{
-        background-color:#29292A;
-        border:0.1rem solid #383838;
-        padding:0 0.25rem;
-        vertical-align: top;
-        transition: background-color .2s;
-        
-    }
-    .items-table td:nth-of-type(1){
-        width:7rem;
-        align-items: center;
-    }
-    .items-table td:nth-of-type(2){
-        width:16rem;
-        padding: 5px;
-    }
-    .items-table td:nth-of-type(3){
-        width:10.7rem;
-        padding: 5px;
-    }
-    .items-table td:nth-of-type(4){
-        width:9.5rem;
-        padding: 5px;
-    }
-    .items-table img{
-        width: 4rem;
-        height: 4rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 3px;
-        margin-top: 3px;
-        filter: drop-shadow(3px 3px #00000042);
-        transition: transform .2s;
-        padding-bottom: 3px;
-        padding-top: 3px;
-    }
-
-    .items-table img:hover{
-        transform: scale(1.05);
-    }
-    .items-table span{
-        z-index: 1;
-        position: relative;
-    }
-
-
-    .collapsible {
-        background-color:#323233;
-        border: 0.15rem solid #3c3c3d;
-        border-radius: 3px;
-        color: #ffffff;
-        cursor: pointer;
-        padding: 4px;
-        width: 100%;
-        text-align: center;
-        outline: none;
-        font-size: 17px;
-        margin-bottom: 4px;
-}
-
-
-
-
-.active, .collapsible:hover {
-  background-color: #3c3c3d;
-}
-
-
-.content {
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-image: linear-gradient(to bottom, #1f1f20, #1a1a1b);
-  transition: max-height 0.2s ease-out;
-  max-height: 0;
-  border: 0.15rem solid #3c3c3d;
-  margin-bottom: 4px;
-  border-radius: 3px;
-  box-shadow: inset 0px 12px 3px -6px rgba(0,0,0,0.36);
-}
-    
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
-<header>
-    <h6 class="ru" style="display: none;">REV'S ULTIMATE RP 2</h6>
-    <h6 class="en" style="display: block;">REV'S ULTIMATE RP 2</h6>
-    <div id="lang-change">
-        <div class="ru lang-change lang-change-ru" style="display: none;"></div>
-        <div class="en lang-change lang-change-en" style="display: block;"></div>
-    </div>
-</header>
+
 </head>
 
+<body style="max-width: 100rem; margin: auto; height: 100%; display: flex;">
+    <!-- side column -->
+    <div class="side">
+
+        <div class="boxgeneral" style="height: 100%">
+            <div class="boxround" style="display: flex; flex-direction: column; background-color: #0F0F0F; padding-left: 15px; padding-right: 15px;">
+
+                <div style="width: 100%; height: 100%; border-bottom: #1A1A1A solid 2px; padding: 5px; display: flex; flex-direction: column;">
+                        <h3 class="ru" style="display: none;">Содержание</h3>
+                        <h3 class="en" style="display: block;">Contents</h3>
+
+                        <div style="overflow-y: auto; overflow-x: hidden; height: 100%; scrollbar-base-color: transparent; scrollbar-color: #18243390;">
+                            <a href="#introduction" class="ru contents" style="display: none;">
+                                Начало
+                            </a>
+                            <a href="#introduction" class="en contents" style="display: block;">
+                                Introduction
+                            </a>
+
+                            <a href="#renames" class="ru contents" style="display: none;">
+                                Переименования
+                            </a>
+                            <a href="#renames" class="en contents" style="display: block;">
+                                Renames
+                            </a>
+
+                            <a href="#deco" class="ru contents c2" style="display: none;">
+                                Декор
+                            </a>
+                            <a href="#deco" class="en contents c2" style="display: block;">
+                                Deco
+                            </a>
+
+                            <a href="#deco-furniture" class="ru contents c3" style="display: none;">
+                                Мебель
+                            </a>
+                            <a href="#deco-furniture" class="en contents c3" style="display: block;">
+                                Furniture
+                            </a>
+
+                            <a href="#deco-nature-n-plants" class="ru contents c3" style="display: none;">
+                                Природа и растения
+                            </a>
+                            <a href="#deco-nature-n-plants" class="en contents c3" style="display: block;">
+                                Nature and plants
+                            </a>
+
+                            <a href="#deco-road-signs-and-construction-props" class="ru contents c3" style="display: none;">
+                                Дорожные знаки и строительные пропы
+                            </a>
+                            <a href="#deco-road-signs-and-construction-props" class="en contents c3" style="display: block;">
+                                Road signs and construction props
+                            </a>
 
 
-<body>
-
-    
-
-    <section style="width: 18%; float: left;" id="nav1">
-        <nav>
-        <ul>
-        </ul>
-        <div class="titles side-panel" id="titles">
-
-            <h1 class="ru" style="display: none;">Содержание</h1>
-            <h1 class="en" style="display: block;">Contents</h1>
-
-            <div class="titles-container">
-                <a href="#introduction" class="ru" style="display: none;">
-                    <p>Начало</p>
-                </a><a href="#introduction" class="en" style="display: block;">
-                    <p>Introduction</p>
-                </a>
-
-                <a href="#installation_and_usage" class="ru" style="display: none;">
-                    <p>Установка и использование</p>
-                </a><a href="#installation_and_usage" class="en" style="display: block;">
-                    <p>Installation and usage</p>
-                </a>
-
-                <a href="#renames" class="ru" style="display: none;">
-                    <p>Переименования</p>
-                </a><a href="#renames" class="en" style="display: block;">
-                    <p>Renames</p>
-                </a>
+                        </div>
+                </div>
 
 
-                <a href="#deco" class="ul-2 ru" style="display: none;">
-                    <p>Декор</p>
-                </a><a href="#deco" class="ul-2 en" style="display: block;">
-                    <p>Deco</p>
-                </a>
+                <!-- links and stuff -->
 
-                <a href="#deco-furniture" class="ul-3 ru" style="display: none;">
-                    <p>Мебель</p>
-                </a><a href="#deco-furniture" class="ul-3 en" style="display: block;">
-                    <p>Furniture</p>
-                </a>
+                <div style="height: 250px; width: 100%; display: flex; flex-direction: column; padding: 5px;">
+                    <div style="height: 100%; width: 100%; display: flex; flex-direction: row;">
+                        <button class="button" style="width: 100%;" id="lang-change-eng">
+                        English
+                        </button>
+                        <button class="button" style="width: 100%;" id="lang-change-ru">
+                        Русский
+                        </button>
+                    </div>
 
-                <a href="#deco-nature-n-plants" class="ul-3 ru" style="display: none;">
-                    <p>Природа и растения</p>
-                </a><a href="#deco-nature-n-plants" class="ul-3 en" style="display: block;">
-                    <p>Nature and plants</p>
-                </a>
+                    <a href="https://www.planetminecraft.com/" class="button">
+                        <img src="resources/pmc.png" alt="*PMC*">
+                        Planet Minecraft
+                    </a>
+                    
+                    <a href="https://www.planetminecraft.com/" class="button">
+                        <img src="resources/mci.png" alt="*PMC*">
+                        Minecraft Inside
+                    </a>
 
-                <a href="#deco-road-signs-and-construction-props" class="ul-3 ru" style="display: none;">
-                    <p>Дорожные знаки и строительные пропы</p>
-                </a><a href="#deco-road-signs-and-construction-props" class="ul-3 en" style="display: block;">
-                    <p>Road signs and construction props</p>
-                </a>
-
+                </div>
             </div>
-
-            <div class="links-container">
-                <h1 class="ru" style="display: none;">Ссылки</h1>
-                <h1 class="en" style="display: block;">Links</h1>
-                <div class="download-btn"></div>
-
-                <a href="https://www.planetminecraft.com/" class="download-tab pmc_link"><img src="resources/pmc.png">
-                    <p>PLANET MC</p>
-                </a>
-
-
-                <a href="https://minecraft-inside.ru/" class="download-tab mci_link"><img src="resources/mci.png">
-                    <p>MC INSIDE</p>
-                </a>
-            </div>
-            
-
         </div>
 
-    </nav>
-</section>
+    </div>
 
 
-    <section style="width: 82%; float: right;" id="main1">
-        
+     <!-- main column -->
+    <div class="main">
 
-        <article>
-            <div class="container">
+        <div class="boxgeneral" id="introduction">
+            <div class="boxround">
 
-                <!-- <p><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></p> -->
+                <img src="resources/logo.png" alt="*Logo*" style="margin: auto;  display: block; width: 80%;"> 
 
-                <p><br><br><br></p>
-                <div class="logo" id="introduction"></div>
+                <span class="ru" style="display: none;">
+                    <h1>ГАЙД ПО ПЕРЕИМЕНОВАНИЯМ</h1>
+                </span>
+                <span class="en" style="display: block;">
+                    <h1>RENAMING GUIDE</h1>
+                </span>
 
-                <vernstuff><span class="ru" style="display: none;"><b>ГАЙД ПО ПЕРЕИМЕНОВАНИЯМ</b></span><span class="en" style="display: block;"><b>RENAMING GUIDE</b></span></vernstuff>
-                <vernstuff2><span class="ru" style="display: none;"><b>ПОСЛЕДНЯЯ ВЕРСИЯ: БЕТА-0.1 [ПРИВАТНАЯ WIP]</b></span><span class="en" style="display: block;"><b>LATEST VERSION: BETA-0.1 [PRIVATE WIP]</b></span></vernstuff2>
-                <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
-                <p><span class="ru" style="display: none; text-align: center;">Сотни новых предметов и возможностей для декорации</span><span class="en" style="display: block; text-align: center;">Hundreds of new items and possibilities for deco</span></p>
-                <vernstuff2><span class="ru" style="display: none;"></span><span class="en" style="display: block;"></span></vernstuff2>
-                <p><span class="ru" style="display: none;"><b>Rev's Ultimate RP 2</b> - ресурс-пак, изначально сделанный для сервера Realm+ и предназначенный для расширения выбора в декоре и косметических предметах. Среди новых предметов есть пропы, шапки, оружие, еда и т.д.</span><span class="en" style="display: block;"><b>Rev's Ultimate RP 2</b> is a resourcepack originally made for Realm+ (an SMP) and designed to expand the choice in deco and cosmetic items. New items include props, hats, weapons, food, etc.</span></p>
+                <span class="ru" style="display: none;">
+                    <h2>ПОСЛЕДНЯЯ ВЕРСИЯ: БЕТА-0.1 [ПРИВАТНАЯ WIP]</h2>
+                </span>
+                <span class="en" style="display: block;">
+                    <h2>LATEST VERSION: BETA-0.1 [PRIVATE WIP]</h2>
+                </span>
+                
+                <span class="ru" style="display: none; text-align: center;">
+                    Сотни новых предметов и возможностей для декорации
+                </span>
+                <span class="en" style="display: block; text-align: center;">
+                    Hundreds of new items and possibilities for deco
+                </span>
+
+                <br>
+
+                <span class="ru" style="display: none;">
+                    <b>Rev's Ultimate RP 2</b> - ресурс-пак, изначально сделанный для сервера Realm+ (R.I.P.) и 
+                    предназначенный для расширения выбора в декоре и косметических предметах. 
+                    Среди новых предметов есть пропы, шапки, оружие, еда и т.д.
+                </span>
+                
+                <span class="en" style="display: block;">
+                    <b>Rev's Ultimate RP 2</b> is a resourcepack originally made for Realm+ (an SMP, also R.I.P.) 
+                    and designed to expand the choice in deco and cosmetic items. 
+                    New items include props, hats, weapons, food, etc.
+                </span>
+
+            </div>
+        </div>
+
+        <div class="boxgeneral">
+            <div class="boxround">
+
+                <h3 id="installation_and_usage">
+                    <span class="ru" style="display: none;">
+                        Установка и использование
+                    </span>
+                    <span class="en" style="display: block;">
+                        Installation and usage
+                    </span>
+                </h3>
+
+                <span class="ru" style="display: none;">
+                    Для использования ресурс-пака нужен <a href="https://optifine.net"><b>OptiFine</b></a> или 
+                    <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> 
+                    (рекомендуется для игнорирования регистра символов у русских названий), 
+                    иначе он работать не будет. Скачав ресурс-пак, поместите его в папку 
+                    resourcepacks в корневой папке Minecraft, а затем включите его в настройках игры. 
+                    <br><br>Переименуйте нужный предмет в наковальне для получения новой текстуры/модели. 
+                    Символ <b>*</b> после или до названия предмета говорит о возможности добавить туда 
+                    дополнительный текст при желании.
+                </span>
+
+                <span class="en" style="display: block;">
+                    You need to install <a href="https://optifine.net"><b>OptiFine</b></a> or 
+                    <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> for the resourcepack to work. 
+                    After downloading it, put it into the resourcepacks folder in your game root directory 
+                    and enable it in the game settings.<br><br>Rename an item on an anvil to get a new texture/model. 
+                    The <b>*</b> symbol after or before the item name suggests that you can add text there if you wish.
+                </span>
+
+                <br>
+
+                <h4>
+                    <span class="ru" style="display: none;">
+                        Разрешается:
+                    </span>
+                    <span class="en" style="display: block;">
+                        You are allowed to:
+                    </span>
+                </h4>
+
+                <ul>
+                    <span class="ru" style="display: none;">
+                        • Использовать ресурс-пак в видео<br>
+                        • Использовать ресурс-пак на своём сервере/для строительных проектов<br>
+                        • Изменять ресурс-пак для личного использования
+                    </span>
+                    <span class="en" style="display: block;">
+                        • Use the resourcepack in your videos<br>
+                        • Use the resourcepack on your server/building project<br>
+                        • Edit the resourcepack for personal use
+                    </span>
+                </ul>
+
+                <h4>
+                    <span class="ru" style="display: none;">
+                        Запрещается:
+                    </span>
+                    <span class="en" style="display: block;">
+                        You are NOT allowed to:
+                    </span>
+                </h4>
+
+                <ul>
+                    <span class="ru" style="display: none;">
+                        • Выдавать себя за автора<br>
+                        • Красть текстуры/модели с отсутствием изменений/незначительными изменениями
+                    </span>
+                    <span class="en" style="display: block;">
+                        • Take the authorship<br>
+                        • Steal textures/models without any changes/with overly minor changes
+                    </span>
+                </ul>
 
 
 
+                <span style="text-align: center; color: #bbbbbb">
+                    <span class="ru" style="display: none;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>
+                        [ СКАЧАТЬ ЭТУ СТРАНИЦУ (index.html) ]</b></a><br>
+                        Code > Download ZIP (для работы нужно оставить папку resources в том же месте, где и index.html)
+                    </span>
+                    <span class="en" style="display: block;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>
+                        [ DOWNLOAD THIS PAGE (index.html) ]</b></a><br>
+                        Code > Download ZIP (leave the resources folder in the same place as the index.html file for it to work properly)
+                    </span>
+                </span>
 
-                <h1 id="installation_and_usage"><span class="ru" style="display: none;">Установка и использование</span><span class="en" style="display: block;">Installation and usage</span></h1>
-
-                <p><span class="ru" style="display: none;">Для использования ресурс-пака нужен <a href="https://optifine.net"><b>OptiFine</b></a> или <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> (рекомендуется для игнорирования регистра символов у русских названий), иначе он работать не будет. Скачав ресурс-пак, поместите его в папку resourcepacks в корневой папке Minecraft, а затем включите его в настройках игры. <br><br>Переименуйте нужный предмет в наковальне для получения новой текстуры/модели. Символ <b>*</b> после или до названия предмета говорит о возможности добавить туда дополнительный текст при желании.
-                </span><span class="en" style="display: block;">You need to install <a href="https://optifine.net"><b>OptiFine</b></a> or <a href="https://modrinth.com/mod/cit-resewn"><b>CIT Resewn</b></a> for the resourcepack to work. After downloading it, put it into the resourcepacks folder in your game root directory and enable it in the game settings.<br><br>Rename an item on an anvil to get a new texture/model. The <b>*</b> symbol after or before the item name suggests that you can add text there if you wish.</span></p>
-
-                <h2 class="bold"><span class="ru" style="display: none;">Разрешается:</span><span class="en" style="display: block;">You are allowed to:</span></h2>
-                <div class="ul">
-                    <p><span class="ru" style="display: none;">• Использовать ресурс-пак в видео<br>• Использовать ресурс-пак на своём сервере/для строительных проектов<br>• Изменять ресурс-пак для личного использования</span><span class="en" style="display: block;">• Use the resourcepack in your videos<br>• Use the resourcepack on your server/building project<br>• Edit the resourcepack for personal use</span></p>
-                </div>
-                <h2 class="bold"><span class="ru" style="display: none;">Запрещается:</span><span class="en" style="display: block;">You are not allowed to:</span></h2>
-                <div class="ul">
-                    <p><span class="ru" style="display: none;">• Выдавать себя за автора<br>• Красть текстуры/модели с отсутствием изменений/незначительными изменениями</span><span class="en" style="display: block;">• Take the authorship<br>• Steal textures/models without any changes/with overly minor changes</span></p>
-                </div>
-
+            </div>
+        </div>
 
 
-                <pdownl><span class="ru" style="display: none;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>[ СКАЧАТЬ ЭТУ СТРАНИЦУ (index.html) ]</b></a><br>Code > Download ZIP (для работы нужно оставить папку resources в том же месте, где и index.html)
-                </span><span class="en" style="display: block;"><a href="https://github.com/Reviksedy/ultimate_rp2"><b>[ DOWNLOAD THIS PAGE (index.html) ]</b></a><br>Code > Download ZIP (leave the resources folder in the same place as the index.html file for it to work properly)</span></pdownl>
+        <div class="boxgeneral">
+            <div class="boxround">
+                <h2 id="renames">
+                    <span class="ru" style="display: none;">
+                        Переименования
+                    </span>
+                    <span class="en" style="display: block;">
+                        Renames
+                    </span>
+                </h2>
 
+                <h3 id="deco">
+                    <span class="ru" style="display: none;">
+                        Декор
+                    </span>
+                    <span class="en" style="display: block;">
+                        Deco
+                    </span>
+                </h3>
 
-
-
-                <h1 id="renames"><span class="ru" style="display: none;">Переименования</span><span class="en" style="display: block;">Renames</span></h1>
-
-                <h4 id="deco"><span class="ru" style="display: none;">Декор</span><span class="en" style="display: block;">Deco</span></h4>
-
-                <h5 id="deco-furniture"><span class="ru" style="display: none;">Мебель</span><span class="en" style="display: block;">Furniture</span></h5>
+                <h4 id="deco-furniture">
+                    <span class="ru" style="display: none;">
+                        Мебель
+                    </span>
+                    <span class="en" style="display: block;">
+                        Furniture
+                    </span>
+                </h4>
 
                 <table class="items-table">
                     <tr>
@@ -850,7 +394,14 @@
 
 
 
-                <h5 id="deco-nature-n-plants"><span class="ru" style="display: none;">Природа и растения</span><span class="en" style="display: block;">Nature and plants</span></h5>
+                <h4 id="deco-nature-n-plants">
+                    <span class="ru" style="display: none;">
+                        Природа и растения
+                    </span>
+                    <span class="en" style="display: block;">
+                        Nature and plants
+                    </span>
+                </h4>
 
 
                 <table class="items-table">
@@ -978,7 +529,14 @@
 
 
 
-                <h5 id="deco-road-signs-and-construction-props"><span class="ru" style="display: none;">Дорожные знаки и строительные пропы</span><span class="en" style="display: block;">Road signs and construction props</span></h5>
+                <h4 id="deco-road-signs-and-construction-props">
+                    <span class="ru" style="display: none;">
+                        Дорожные знаки и строительные пропы
+                    </span>
+                    <span class="en" style="display: block;">
+                        Road signs and construction props
+                    </span>
+                </h4>
 
                 <table class="items-table">
 
@@ -1010,24 +568,57 @@
 
 
 
-                <pdownl><span class="ru" style="display: none;"><br><br>ну вроде как все</span><span class="en" style="display: block;"><br><br>thats it ig</span></pdownl>
+                <span class="ru" style="display: none; text-align: center;">
+                    <br><br>ну вроде как все
+                </span><span class="en" style="display: block; text-align: center;">
+                    <br><br>thats it ig
+                </span>
+
                 <img src="resources/forthefunny.png" style="margin-left: auto; margin-right: auto; display: block; -ms-interpolation-mode: bicubic; image-rendering: unset; image-rendering:unset; "></img>
 
                 <p><br></p>
-
             </div>
-            
-        </article>
-    </section>
+        </div>
+
+    </div>
 
 
+</body>
 
 
     <script>
         let lang = 1;
-        document.getElementById("lang-change").onclick = function () {
+        document.getElementById("lang-change-eng").onclick = function () {
             const langRu = document.querySelectorAll(".ru");
             const langEn = document.querySelectorAll(".en");
+            lang = 0
+            offset = 9999999;
+            switch (lang) {
+                case 1:
+                    for (var i = 0; i < langRu.length; i++) {
+                        langRu[i].style.display = "block";
+                    }
+                    for (var i = 0; i < langEn.length; i++) {
+                        langEn[i].style.display = "none";
+                    }
+                    lang = 0;
+                    break;
+                case 0:
+                    for (var i = 0; i < langRu.length; i++) {
+                        langRu[i].style.display = "none";
+                    }
+                    for (var i = 0; i < langEn.length; i++) {
+                        langEn[i].style.display = "block";
+                    }
+                    lang = 1;
+                    break;
+            }
+        }
+
+        document.getElementById("lang-change-ru").onclick = function () {
+            const langRu = document.querySelectorAll(".ru");
+            const langEn = document.querySelectorAll(".en");
+            lang = 1
             offset = 9999999;
             switch (lang) {
                 case 1:
@@ -1070,6 +661,5 @@
        }      
     </script>
 
-</body>
 
 </html>
